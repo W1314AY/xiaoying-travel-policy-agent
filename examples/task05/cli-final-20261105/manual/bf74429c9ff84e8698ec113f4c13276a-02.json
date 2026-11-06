@@ -1,0 +1,68 @@
+{
+  "mode": "offline_mock",
+  "question": "上海",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "住宿限额"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D02"
+        ]
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "result_summary": {
+        "doc_id": "D02",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+      },
+      "reason": "读取本地原文，核对版本和条款。",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "上海适用的条款为「普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币」。限额内按实际住宿费用报销。",
+        "gaps": [],
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+          }
+        ]
+      },
+      "result_summary": "已回答",
+      "reason": "根据已读取的条款与尚缺的信息结束本轮。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {
+    "needs_city": true
+  },
+  "status": "已回答",
+  "answer": "上海适用的条款为「普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币」。限额内按实际住宿费用报销。",
+  "gaps": [],
+  "citations": [
+    {
+      "doc_id": "D02",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+    }
+  ],
+  "session_id": "bf74429c9ff84e8698ec113f4c13276a",
+  "turn": 2
+}

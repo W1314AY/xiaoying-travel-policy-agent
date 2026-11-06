@@ -1,0 +1,36 @@
+{
+  "operator": "Codex",
+  "mode": "offline_mock",
+  "notes": "PTY 按键与终端返回记录；控制序列来自终端；住宿首轮输出工具预算截断，完整答案见 manual 下 Trace。",
+  "steps": [
+    {
+      "input": "/ (without Enter)",
+      "output": "\u001b[?12l\u001b[?25l/\n /examples  查看示例问法        \u001b[7;4H /sources   列出本次加载的制度  \u001b[8;4H /help      查看指令\u001b[12X\u001b[9;4H /exit      退出会话\u001b[12X\u001b[5;4H\u001b[?25h"
+    },
+    {
+      "input": "Down, Down, Enter",
+      "output": "\u001b[?12l\u001b[?25l\r› /sources\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\u001b[6;1H\u001b[?25h\u001b[?2004l\u001b[?2004h\u001b[?12l\u001b[?25l  D01  差旅报销期限  [2026-09-01]\r\n  D02  国内住宿标准  [2026-09-01]\r\n  D03  国内铁路席别  [2026-09-01]\u001b[10;1H›\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\u001b[10;3H\u001b[?25h"
+    },
+    {
+      "input": "/s",
+      "output": "\u001b[?12l\u001b[?25l/s\n /sources  列出本次加载的制度  \u001b[10;5H\u001b[?25h"
+    },
+    {
+      "input": "Escape",
+      "output": "\u001b[?12l\u001b[?25l\u001b[10;2H\u001b[K\n\u001b[K\u001b[10;3H\u001b[?25h"
+    },
+    {
+      "input": "这趟出差住宿费上限是多少？ Enter",
+      "output": "Warning: truncated output (original token count: 202)\nTotal output lines: 21\n\n\u001b[?12l\u001b[?25l\r› 这趟出差住宿费上限是多少？\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\r\n\u001b[K\u001b[11;1H\u001b[?25h\u001b[?2004l\u001b[?25l\u001b[16X\r\n回答：  [状态：待确认]\r\n请问本次国内出差的目的地是哪座城市？\u001b[15;1H  引用：D02 [2026-09-01] 普通员工国内出差，在北京、上海、广州、深圳住宿，每人每 晚上限为 500 元人民币。…2 tokens truncated…他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。\r\n  资料缺口：请问本次国内出差的目的地是哪座城市？\r\n  模式：离线 Mock（合成制度）\r\n  记录路径：<project>\\examples\\task05\\cli-final-20261105\\manual\\bf74429c9ff84e8698ec113f4c13276a-01.json\u001b[23;1H\u001b[?25h\u001b[?2004h\u001b[?12l\u001b[?25l›\u001b[K\r\n\u001b[K\u001b[23;3H\u001b[?25h"
+    },
+    {
+      "input": "上海 Enter",
+      "output": "\u001b[?12l\r› 上海\u001b[K\r\n\u001b[K\u001b[?2004l\u001b[16X\n回答：  [状态：已回答]\r\n上海适用的条款为「普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为\r\n\u001b[23;79H为 500 元人民币」。限额内按实际住宿费用报销。\r\n\n  引用：D02 [2026-09-01] 普通员工国内出差，在北京、上海、广州、深圳住宿，每人每 \r\n\u001b[23;80H 晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按\r\n\u001b[23;79H按实际住宿费用报销。\r\n  资料缺口：无\r\n  模式：离线 Mock（合成制度）\r\n  记录路径：<project>\\examples\\task05\\cli-final-20261105\\manual\\bf7\r\n\u001b[23;80H74429c9ff84e8698ec113f4c13276a-02.json\r\n\u001b[?2004h\u001b[?12l\n›\u001b[1C"
+    },
+    {
+      "input": "Ctrl+C",
+      "output": "\r›\u001b[K\u001b[?25l\u001b[79C\u001b[?12l\r\n\u001b[?25h\u001b[?2004l\n已中断，结束本次会话。\r\n\u001b[?9001l\u001b[?1004l",
+      "exit_code": 1
+    }
+  ]
+}

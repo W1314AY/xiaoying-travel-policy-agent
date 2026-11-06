@@ -1,0 +1,21 @@
+{
+  "mode": "deepseek",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "model_error": {
+    "code": "model_timeout",
+    "at_decision": 1
+  },
+  "status": "模型请求失败",
+  "answer": "单次模型请求超时（60 秒）。",
+  "citations": [],
+  "gaps": [
+    "单次模型请求超时（60 秒）。"
+  ],
+  "session_id": "a0f87245dbdf4764a162add8ad1be5b1",
+  "turn": 1
+}

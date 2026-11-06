@@ -1,0 +1,21 @@
+{
+  "mode": "deepseek",
+  "question": "早餐费能单独报销吗？",
+  "steps": [],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "model_error": {
+    "code": "missing_key",
+    "at_decision": 1
+  },
+  "status": "模型请求失败",
+  "answer": "未配置 DEEPSEEK_API_KEY，未发送请求。",
+  "citations": [],
+  "gaps": [
+    "未配置 DEEPSEEK_API_KEY，未发送请求。"
+  ],
+  "session_id": "6b12bbfe645042f98a6a4d690d195e1b",
+  "turn": 1
+}

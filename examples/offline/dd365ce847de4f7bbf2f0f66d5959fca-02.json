@@ -1,0 +1,111 @@
+{
+  "mode": "offline_mock",
+  "question": "请查 D04",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销期限"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D01",
+          "D04"
+        ]
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "请查 D04"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D04"
+        ]
+      },
+      "reason": "在本地查找员工指出的文档或原文线索。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "result_summary": {
+        "doc_id": "D01",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+      },
+      "reason": "读取本地原文，核对版本和条款。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 4,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D04"
+      },
+      "result_summary": {
+        "doc_id": "D04",
+        "version": "2026-10-01",
+        "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+      },
+      "reason": "读取本地原文，核对版本和条款。",
+      "next_action": "ask_user"
+    },
+    {
+      "step": 5,
+      "action": "ask_user",
+      "arguments": {
+        "status": "待确认",
+        "answer": "两份制度规定的期限不一致。D01：普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。 D04：普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。 适用对象和起算日相同，版本日期无法证明替代关系。请提供说明优先级的本地文档 ID、标题或用「」标出的原文线索。",
+        "gaps": [
+          "适用对象和起算日相同，版本日期无法证明替代关系。请提供说明优先级的本地文档 ID、标题或用「」标出的原文线索。"
+        ],
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+          },
+          {
+            "doc_id": "D04",
+            "version": "2026-10-01",
+            "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+          }
+        ]
+      },
+      "result_summary": "待确认",
+      "reason": "根据已读取的条款与尚缺的信息结束本轮。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {
+    "conflict": "报销期限"
+  },
+  "status": "待确认",
+  "answer": "两份制度规定的期限不一致。D01：普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。 D04：普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。 适用对象和起算日相同，版本日期无法证明替代关系。请提供说明优先级的本地文档 ID、标题或用「」标出的原文线索。",
+  "gaps": [
+    "适用对象和起算日相同，版本日期无法证明替代关系。请提供说明优先级的本地文档 ID、标题或用「」标出的原文线索。"
+  ],
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+    },
+    {
+      "doc_id": "D04",
+      "version": "2026-10-01",
+      "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+    }
+  ],
+  "session_id": "dd365ce847de4f7bbf2f0f66d5959fca",
+  "turn": 2
+}

@@ -1,0 +1,71 @@
+{
+  "mode": "deepseek",
+  "question": "早餐费能单独报销吗？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "早餐费 报销"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "查找差旅制度中关于早餐费报销的规定",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅 伙食补助 餐费"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用制度关键词检索伙食补助与餐费报销规定",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 3,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费管理办法"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "按制度名称检索国内差旅费管理办法",
+      "next_action": "finish"
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "arguments": {
+        "status": "依据不足",
+        "answer": "未能核对早餐费能否单独报销：我先后用「早餐费 报销」「差旅 伙食补助 餐费」「国内差旅费管理办法」进行检索，均返回空列表，没有可读取的制度原文，因此无法确认早餐费是否可单独报销（例如是否已包含在伙食补助中、是否有票据要求）。请补充差旅费制度的文档 ID 或准确制度名称，我再依据原文给出结论。",
+        "gaps": [
+          "缺少国内差旅费制度原文：检索无候选文档，无法判断早餐费是否可单独报销及凭证要求",
+          "如需给出针对性结论，还缺报销人出差的具体情形（如是否已领取伙食补助/包干）"
+        ],
+        "citations": []
+      },
+      "result_summary": "依据不足",
+      "reason": "三次检索均返回空列表，无可读原文支撑结论",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "依据不足",
+  "answer": "未能核对早餐费能否单独报销：我先后用「早餐费 报销」「差旅 伙食补助 餐费」「国内差旅费管理办法」进行检索，均返回空列表，没有可读取的制度原文，因此无法确认早餐费是否可单独报销（例如是否已包含在伙食补助中、是否有票据要求）。请补充差旅费制度的文档 ID 或准确制度名称，我再依据原文给出结论。",
+  "gaps": [
+    "缺少国内差旅费制度原文：检索无候选文档，无法判断早餐费是否可单独报销及凭证要求",
+    "如需给出针对性结论，还缺报销人出差的具体情形（如是否已领取伙食补助/包干）"
+  ],
+  "citations": [],
+  "session_id": "51583f82bc524bdf85e4956eb5a5bf56",
+  "turn": 1
+}

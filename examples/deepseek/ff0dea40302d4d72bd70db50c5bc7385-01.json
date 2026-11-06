@@ -1,0 +1,115 @@
+{
+  "mode": "deepseek",
+  "question": "去上海出差的差旅费是多少？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "出差 上海 差旅费 标准"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "员工询问去上海出差的差旅费标准，需检索相关费用制度。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费管理办法 住宿费 伙食补助 交通费"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D02"
+        ]
+      },
+      "reason": "前次检索无候选，换用制度关键词再检索国内差旅费标准。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "result_summary": {
+        "doc_id": "D02",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+      },
+      "reason": "检索到唯一候选 D02，需读取原文核实上海差旅费标准。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 4,
+      "action": "search_documents",
+      "arguments": {
+        "query": "伙食补助费 市内交通费 出差补助 标准"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "已读到住宿标准，还需核实伙食补助与交通费等其他差旅费项目的标准。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 5,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅费报销 制度"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用报销制度关键词检索，确认是否还有其他差旅费项目标准文档。",
+      "next_action": "ask_user"
+    },
+    {
+      "step": 6,
+      "action": "ask_user",
+      "arguments": {
+        "status": "待确认",
+        "answer": "已查到普通员工国内差旅住宿标准：在北京、上海、广州、深圳住宿每人每晚上限 500 元，限额内按实际住宿费用报销。但\"差旅费\"还包含伙食补助、市内交通、城际交通等项目，现有资料仅见住宿一项标准，因此需要先确认您的具体条件：请问您要核对的是哪一项费用（住宿费、伙食补助费、市内交通费还是城际交通费）？以及您的出差天数或实际发生的费用金额是多少？",
+        "gaps": [
+          "伙食补助费标准缺失",
+          "市内交通费标准缺失",
+          "城际交通（机票/车票）等级标准缺失",
+          "员工所需核对的具体费用项目与天数未明确"
+        ],
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+          }
+        ]
+      },
+      "result_summary": "待确认",
+      "reason": "住宿标准已有依据，但差旅费其他项目缺资料且员工未说明核对哪一项，需补齐必要条件。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "待确认",
+  "answer": "已查到普通员工国内差旅住宿标准：在北京、上海、广州、深圳住宿每人每晚上限 500 元，限额内按实际住宿费用报销。但\"差旅费\"还包含伙食补助、市内交通、城际交通等项目，现有资料仅见住宿一项标准，因此需要先确认您的具体条件：请问您要核对的是哪一项费用（住宿费、伙食补助费、市内交通费还是城际交通费）？以及您的出差天数或实际发生的费用金额是多少？",
+  "gaps": [
+    "伙食补助费标准缺失",
+    "市内交通费标准缺失",
+    "城际交通（机票/车票）等级标准缺失",
+    "员工所需核对的具体费用项目与天数未明确"
+  ],
+  "citations": [
+    {
+      "doc_id": "D02",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+    }
+  ],
+  "session_id": "ff0dea40302d4d72bd70db50c5bc7385",
+  "turn": 1
+}

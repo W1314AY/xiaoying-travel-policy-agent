@@ -1,0 +1,69 @@
+{
+  "mode": "deepseek",
+  "question": "出差回来最晚什么时候交单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费报销 交单时限 出差结束后提交"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D01"
+        ]
+      },
+      "reason": "查找国内差旅制度中关于报销交单时限的规定",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "result_summary": {
+        "doc_id": "D01",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+      },
+      "reason": "读取候选制度原文核实交单时限",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "普通员工国内出差，最晚应在返程次日起 30 个自然日内提交本次出差的报销单。例如返程日为 9 月 1 日，则从 9 月 2 日起算 30 个自然日内（即 10 月 1 日前）交单。",
+        "gaps": [],
+        "citations": [
+          {
+            "doc_id": "D01",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+          }
+        ]
+      },
+      "result_summary": "已回答",
+      "reason": "已读取现行国内差旅制度原文，明确交单时限",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "已回答",
+  "answer": "普通员工国内出差，最晚应在返程次日起 30 个自然日内提交本次出差的报销单。例如返程日为 9 月 1 日，则从 9 月 2 日起算 30 个自然日内（即 10 月 1 日前）交单。",
+  "gaps": [],
+  "citations": [
+    {
+      "doc_id": "D01",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+    }
+  ],
+  "session_id": "a7c86a81f56f47809b526154a7034217",
+  "turn": 1
+}

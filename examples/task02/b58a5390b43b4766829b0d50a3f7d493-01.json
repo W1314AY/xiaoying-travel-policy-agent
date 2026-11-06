@@ -1,0 +1,35 @@
+{
+  "mode": "offline_mock",
+  "question": "早餐费能单独报销吗？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "早餐费"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "finish"
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "arguments": {},
+      "result_summary": "依据不足",
+      "reason": "现有制度未说明早餐费能否单独报销。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "依据不足",
+  "answer": "现有制度未说明早餐费能否单独报销。",
+  "citations": [],
+  "gaps": [
+    "现有制度未说明早餐费能否单独报销。"
+  ],
+  "session_id": "b58a5390b43b4766829b0d50a3f7d493",
+  "turn": 1
+}

@@ -1,0 +1,234 @@
+{
+  "response_shapes": [
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "search_documents"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "read_document"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "read_document"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "read_document"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "read_document"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "search_documents"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "search_documents"
+      ],
+      "valid_fields": [
+        true
+      ]
+    },
+    {
+      "finish_reason": "tool_calls",
+      "call_count": 1,
+      "names": [
+        "finish"
+      ],
+      "valid_fields": [
+        true
+      ]
+    }
+  ],
+  "trace": {
+    "mode": "deepseek",
+    "question": "国内出差返程后多久要提交报销单？",
+    "steps": [
+      {
+        "step": 1,
+        "action": "search_documents",
+        "arguments": {
+          "query": "国内差旅费报销 提交报销单 期限"
+        },
+        "result_summary": {
+          "candidate_ids": [
+            "D01",
+            "D04"
+          ]
+        },
+        "reason": "需定位国内差旅报销制度的候选文档。",
+        "next_action": "read_document"
+      },
+      {
+        "step": 2,
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D01"
+        },
+        "result_summary": {
+          "doc_id": "D01",
+          "version": "2026-09-01",
+          "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+        },
+        "reason": "读取候选文档原文以核实报销提交时限。",
+        "next_action": "read_document"
+      },
+      {
+        "step": 3,
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D04"
+        },
+        "result_summary": {
+          "doc_id": "D04",
+          "version": "2026-10-01",
+          "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+        },
+        "reason": "核对另一候选文档是否规定不同时限或存在版本冲突。",
+        "next_action": "read_document"
+      },
+      {
+        "step": 4,
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D01"
+        },
+        "result_summary": {
+          "doc_id": "D01",
+          "version": "2026-09-01",
+          "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+        },
+        "reason": "两份文档时限冲突，需重读 D01 确认版本与适用范围信息。",
+        "next_action": "read_document"
+      },
+      {
+        "step": 5,
+        "action": "read_document",
+        "arguments": {
+          "doc_id": "D04"
+        },
+        "result_summary": {
+          "doc_id": "D04",
+          "version": "2026-10-01",
+          "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+        },
+        "reason": "重读 D04 确认版本，判断是否属于替代 D01 的新版本。",
+        "next_action": "search_documents"
+      },
+      {
+        "step": 6,
+        "action": "search_documents",
+        "arguments": {
+          "query": "差旅报销制度 版本 生效 废止 替代"
+        },
+        "result_summary": {
+          "candidate_ids": []
+        },
+        "reason": "需查找说明两份制度生效与替代关系的文件。",
+        "next_action": "search_documents"
+      },
+      {
+        "step": 7,
+        "action": "search_documents",
+        "arguments": {
+          "query": "国内差旅费管理办法 修订 通知"
+        },
+        "result_summary": {
+          "candidate_ids": []
+        },
+        "reason": "换关键词检索是否存在制度修订或生效说明。",
+        "next_action": "finish"
+      },
+      {
+        "step": 8,
+        "action": "finish",
+        "arguments": {
+          "status": "部分已回答",
+          "answer": "关于\"国内出差返程后多久提交报销单\"，现有两份制度都直接涉及普通员工国内出差，但时限规定相互冲突，且检索不到任何说明生效、废止或替代关系的文件，因此无法直接给出唯一结论：\n\n- D01（版本 2026-09-01）：返程次日起 30 个自然日内提交。\n- D04（版本 2026-10-01）：返程次日起 15 个自然日内提交。\n\n两份文件条款措辞与适用对象完全相同，仅时限不同；D04 版本日期较新，但仅凭日期较新不足以证明其替代 D01，需由制度归口部门（财务/差旅管理）确认现行有效版本。在确认前，为规避逾期风险，建议按较严的 15 个自然日口径执行，并向财务确认。\n\n另需注意：以上两份文件均只针对\"普通员工国内出差\"，如涉及特殊情形（如境外行程、跨年度、票据后补等），可能另有规定，本次未核实。",
+          "gaps": [
+            "D01 与 D04 的生效、废止及替代关系无文件可查，需制度归口部门确认现行有效版本",
+            "未核实是否存在针对特殊情形（境外、跨年度、票据后补等）的报销时限规定"
+          ],
+          "citations": [
+            {
+              "doc_id": "D01",
+              "version": "2026-09-01",
+              "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+            },
+            {
+              "doc_id": "D04",
+              "version": "2026-10-01",
+              "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+            }
+          ]
+        },
+        "result_summary": "部分已回答",
+        "reason": "两份制度条款冲突且无从确认替代关系，仅能给出冲突提示与建议。",
+        "next_action": "结束"
+      }
+    ],
+    "context_before": {},
+    "model": "deepseek-flash",
+    "request_timeout_seconds": 60,
+    "first_search_timeout": false,
+    "status": "部分已回答",
+    "answer": "关于\"国内出差返程后多久提交报销单\"，现有两份制度都直接涉及普通员工国内出差，但时限规定相互冲突，且检索不到任何说明生效、废止或替代关系的文件，因此无法直接给出唯一结论：\n\n- D01（版本 2026-09-01）：返程次日起 30 个自然日内提交。\n- D04（版本 2026-10-01）：返程次日起 15 个自然日内提交。\n\n两份文件条款措辞与适用对象完全相同，仅时限不同；D04 版本日期较新，但仅凭日期较新不足以证明其替代 D01，需由制度归口部门（财务/差旅管理）确认现行有效版本。在确认前，为规避逾期风险，建议按较严的 15 个自然日口径执行，并向财务确认。\n\n另需注意：以上两份文件均只针对\"普通员工国内出差\"，如涉及特殊情形（如境外行程、跨年度、票据后补等），可能另有规定，本次未核实。",
+    "gaps": [
+      "D01 与 D04 的生效、废止及替代关系无文件可查，需制度归口部门确认现行有效版本",
+      "未核实是否存在针对特殊情形（境外、跨年度、票据后补等）的报销时限规定"
+    ],
+    "citations": [
+      {
+        "doc_id": "D01",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+      },
+      {
+        "doc_id": "D04",
+        "version": "2026-10-01",
+        "quote": "普通员工国内出差，应自返程次日起 15 个自然日内提交本次出差的报销单。"
+      }
+    ]
+  }
+}

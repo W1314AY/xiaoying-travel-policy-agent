@@ -1,0 +1,69 @@
+{
+  "mode": "deepseek",
+  "question": "我打算去上海，帮我查一下住宿费差标是多少",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "上海 住宿费 差旅标准"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D02"
+        ]
+      },
+      "reason": "员工询问上海住宿费差标，需检索国内差旅住宿费标准相关制度",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "result_summary": {
+        "doc_id": "D02",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+      },
+      "reason": "检索到候选制度 D02，读取原文核实上海住宿费标准",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "按现行国内差旅住宿标准，普通员工在上海出差住宿费上限为每人每晚 500 元人民币，限额内按实际住宿费用报销。",
+        "gaps": [],
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+          }
+        ]
+      },
+      "result_summary": "已回答",
+      "reason": "已读取 D02 原文，其中明确列出上海住宿费上限，可直接回答",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "已回答",
+  "answer": "按现行国内差旅住宿标准，普通员工在上海出差住宿费上限为每人每晚 500 元人民币，限额内按实际住宿费用报销。",
+  "gaps": [],
+  "citations": [
+    {
+      "doc_id": "D02",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+    }
+  ],
+  "session_id": "b02af462ca7740ada4d170f38042cd8f",
+  "turn": 1
+}

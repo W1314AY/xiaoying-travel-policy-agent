@@ -1,0 +1,34 @@
+[
+  {
+    "name": "tests-base",
+    "exit_code": 0
+  },
+  {
+    "name": "tests-menu",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-1",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-2",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-3",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-4",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-5",
+    "exit_code": 0
+  },
+  {
+    "name": "readme-6",
+    "exit_code": 0
+  }
+]

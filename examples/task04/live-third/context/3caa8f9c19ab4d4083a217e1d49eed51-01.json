@@ -1,0 +1,73 @@
+{
+  "mode": "deepseek",
+  "question": "这趟出差住宿费上限是多少？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅 住宿费 标准 上限"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D02"
+        ]
+      },
+      "reason": "需先定位国内差旅住宿费标准相关制度文档",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "result_summary": {
+        "doc_id": "D02",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+      },
+      "reason": "读取候选文档原文以核实住宿费上限标准",
+      "next_action": "ask_user"
+    },
+    {
+      "step": 3,
+      "action": "ask_user",
+      "arguments": {
+        "status": "待确认",
+        "answer": "住宿费上限分两档：北京、上海、广州、深圳为每人每晚 500 元；其他国内城市为每人每晚 350 元，限额内据实报销。您这趟出差的城市是哪一个？请补充目的地城市，我给出对应上限。",
+        "gaps": [
+          "出差目的地城市未提供，无法确定适用哪一档住宿费上限"
+        ],
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+          }
+        ]
+      },
+      "result_summary": "待确认",
+      "reason": "住宿费上限按城市分档，缺少目的地城市这一必要条件",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "待确认",
+  "answer": "住宿费上限分两档：北京、上海、广州、深圳为每人每晚 500 元；其他国内城市为每人每晚 350 元，限额内据实报销。您这趟出差的城市是哪一个？请补充目的地城市，我给出对应上限。",
+  "gaps": [
+    "出差目的地城市未提供，无法确定适用哪一档住宿费上限"
+  ],
+  "citations": [
+    {
+      "doc_id": "D02",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+    }
+  ],
+  "session_id": "3caa8f9c19ab4d4083a217e1d49eed51",
+  "turn": 1
+}

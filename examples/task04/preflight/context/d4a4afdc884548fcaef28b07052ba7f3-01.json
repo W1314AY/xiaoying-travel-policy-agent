@@ -1,0 +1,21 @@
+{
+  "mode": "deepseek",
+  "question": "这趟出差住宿费上限是多少？",
+  "steps": [],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "model_error": {
+    "code": "missing_key",
+    "at_decision": 1
+  },
+  "status": "模型请求失败",
+  "answer": "未配置 DEEPSEEK_API_KEY，未发送请求。",
+  "citations": [],
+  "gaps": [
+    "未配置 DEEPSEEK_API_KEY，未发送请求。"
+  ],
+  "session_id": "d4a4afdc884548fcaef28b07052ba7f3",
+  "turn": 1
+}

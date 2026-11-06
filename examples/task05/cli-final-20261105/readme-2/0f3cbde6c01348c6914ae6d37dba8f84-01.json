@@ -1,0 +1,66 @@
+{
+  "mode": "offline_mock",
+  "question": "高铁二等座怎么报销？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "高铁二等座怎么报销？"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D03"
+        ]
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      },
+      "result_summary": {
+        "doc_id": "D03",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。"
+      },
+      "reason": "读取本地原文，核对版本和条款。",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。",
+        "gaps": [],
+        "citations": [
+          {
+            "doc_id": "D03",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。"
+          }
+        ]
+      },
+      "result_summary": "已回答",
+      "reason": "根据已读取的条款与尚缺的信息结束本轮。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "已回答",
+  "answer": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。",
+  "gaps": [],
+  "citations": [
+    {
+      "doc_id": "D03",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。"
+    }
+  ],
+  "session_id": "0f3cbde6c01348c6914ae6d37dba8f84",
+  "turn": 1
+}

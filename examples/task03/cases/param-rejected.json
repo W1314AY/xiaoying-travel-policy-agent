@@ -1,0 +1,36 @@
+{
+  "test_case": "param-rejected",
+  "mode": "offline_mock",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_document",
+      "arguments": {},
+      "result_summary": {
+        "error": "invalid_arguments",
+        "message": "read_document 需要一个非空字符串参数 doc_id。"
+      },
+      "reason": "测试注入：读文档时漏传 ID。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {},
+      "result_summary": {
+        "error": "invalid_arguments",
+        "message": "read_document 需要一个非空字符串参数 doc_id。"
+      },
+      "reason": "测试注入：读文档时漏传 ID。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "未完成",
+  "answer": "一次修正后仍未通过校验。read_document 需要一个非空字符串参数 doc_id。",
+  "citations": [],
+  "gaps": [
+    "一次修正后仍未通过校验。read_document 需要一个非空字符串参数 doc_id。"
+  ]
+}

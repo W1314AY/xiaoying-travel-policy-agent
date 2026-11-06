@@ -1,0 +1,72 @@
+{
+  "test_case": "cite-doc_id-rejected",
+  "mode": "offline_mock",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "result_summary": {
+        "doc_id": "D01",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+      },
+      "reason": "读取期限条款。",
+      "next_action": "finish"
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。",
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+          }
+        ],
+        "gaps": []
+      },
+      "result_summary": {
+        "error": "invalid_answer",
+        "message": "引用了本轮未读取的文档。"
+      },
+      "reason": "提交条款及引用以供校验。",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {
+        "status": "已回答",
+        "answer": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。",
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。"
+          }
+        ],
+        "gaps": []
+      },
+      "result_summary": {
+        "error": "invalid_answer",
+        "message": "引用了本轮未读取的文档。"
+      },
+      "reason": "提交条款及引用以供校验。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "未完成",
+  "answer": "一次修正后仍未通过校验。引用了本轮未读取的文档。",
+  "citations": [],
+  "gaps": [
+    "一次修正后仍未通过校验。引用了本轮未读取的文档。"
+  ]
+}

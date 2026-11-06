@@ -1,0 +1,158 @@
+[
+  {
+    "case": "normal",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\normal",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "passed",
+    "issues": [],
+    "traces": [
+      "normal/4390bb8e3a1743659e77d7c943de7662-01.json"
+    ],
+    "terminal": "normal/terminal.txt"
+  },
+  {
+    "case": "timeout",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--first-search-timeout",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\timeout",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "passed",
+    "issues": [],
+    "traces": [
+      "timeout/cde854178ea4411b91978c12c38fe5ee-01.json"
+    ],
+    "terminal": "timeout/terminal.txt"
+  },
+  {
+    "case": "conflict",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--extra-data",
+      "data/conflict.json",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\conflict",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "failed",
+    "issues": [
+      "model_response"
+    ],
+    "traces": [
+      "conflict/dc88ab8a70bc4fb1b7c14e4e72f76c2e-01.json"
+    ],
+    "terminal": "conflict/terminal.txt"
+  },
+  {
+    "case": "outside",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\outside",
+      "早餐费能单独报销吗？"
+    ],
+    "questions": [
+      "早餐费能单独报销吗？"
+    ],
+    "result": "failed",
+    "issues": [
+      "模式或状态不符合用例预期"
+    ],
+    "traces": [
+      "outside/c743b30ecccf4d65b891e40bc242bb9c-01.json"
+    ],
+    "terminal": "outside/terminal.txt"
+  },
+  {
+    "case": "similar",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\similar",
+      "出差回来最晚什么时候交单？"
+    ],
+    "questions": [
+      "出差回来最晚什么时候交单？"
+    ],
+    "result": "passed",
+    "issues": [],
+    "traces": [
+      "similar/4faffda55eb749d8a35ea4757e2f2163-01.json"
+    ],
+    "terminal": "similar/terminal.txt"
+  },
+  {
+    "case": "context",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\live-first\\context",
+      "这趟出差住宿费上限是多少？",
+      "上海"
+    ],
+    "questions": [
+      "这趟出差住宿费上限是多少？",
+      "上海"
+    ],
+    "result": "failed",
+    "issues": [
+      "模式或状态不符合用例预期"
+    ],
+    "traces": [
+      "context/12a32dedd06c45acbda14acb48663e44-01.json",
+      "context/12a32dedd06c45acbda14acb48663e44-02.json"
+    ],
+    "terminal": "context/terminal.txt"
+  }
+]

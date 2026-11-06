@@ -1,0 +1,21 @@
+{
+  "mode": "deepseek",
+  "question": "出差回来最晚什么时候交单？",
+  "steps": [],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "model_error": {
+    "code": "missing_key",
+    "at_decision": 1
+  },
+  "status": "模型请求失败",
+  "answer": "未配置 DEEPSEEK_API_KEY，未发送请求。",
+  "citations": [],
+  "gaps": [
+    "未配置 DEEPSEEK_API_KEY，未发送请求。"
+  ],
+  "session_id": "4d24cdffd1a14920a5ebea0b5099144c",
+  "turn": 1
+}

@@ -1,0 +1,37 @@
+{
+  "mode": "deepseek",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费报销 提交报销单 时限"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D01",
+          "D04"
+        ]
+      },
+      "reason": "检索国内差旅报销提交时限的制度依据",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "model_error": {
+    "code": "model_response",
+    "at_decision": 2
+  },
+  "status": "模型请求失败",
+  "answer": "模型未返回单个有效的工具调用。",
+  "citations": [],
+  "gaps": [
+    "模型未返回单个有效的工具调用。"
+  ],
+  "session_id": "dc88ab8a70bc4fb1b7c14e4e72f76c2e",
+  "turn": 1
+}

@@ -1,0 +1,39 @@
+python -X utf8 -B -m unittest discover -s tests -v
+test_deadline_without_key (test_offline_cli.OfflineCLI.test_deadline_without_key) ... ok
+test_no_match (test_offline_cli.OfflineCLI.test_no_match) ... ok
+test_rail_seats (test_offline_cli.OfflineCLI.test_rail_seats) ... ok
+test_replacement_uses_read_text (test_offline_cli.OfflineCLI.test_replacement_uses_read_text) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.862s
+
+OK
+python -X utf8 develope/src/travel_qa.py 国内出差返程后多久要提交报销单？
+模式：离线 Mock（合成制度）
+状态：已回答
+回答：普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。
+引用：D01 [2026-09-01] 普通员工国内出差，应自返程次日起 30 个自然日内提交本次出差的报销单。
+资料缺口：无
+记录路径：<project>\examples\offline\11fdaca45d28472db3e6f7cbf5eee9c5.json
+python -X utf8 develope/src/travel_qa.py 高铁二等座怎么报销？
+模式：离线 Mock（合成制度）
+状态：已回答
+回答：普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。
+引用：D03 [2026-09-01] 普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。
+资料缺口：无
+记录路径：<project>\examples\offline\81ca5a4fda5b4de0b6b336496d53265c.json
+python -X utf8 develope/src/travel_qa.py 自行升至一等座怎么报销？
+模式：离线 Mock（合成制度）
+状态：已回答
+回答：普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。
+引用：D03 [2026-09-01] 普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。
+资料缺口：无
+记录路径：<project>\examples\offline\3b3e467a1f384d9d997ecb4cbf66a4ae.json
+python -X utf8 develope/src/travel_qa.py 国内出差返程后多久要提交报销单？ --data .scratch\task01-copy-bcb6e7e50e1e4d178eb937fcc2a650c8.json
+模式：离线 Mock（合成制度）
+状态：已回答
+回答：员工须自返程当日起 21 个自然日内提交差旅报销单。
+引用：D01 [2026-10-15] 员工须自返程当日起 21 个自然日内提交差旅报销单。
+资料缺口：无
+记录路径：<project>\examples\offline\50529b8c11274a7f8a43fb6cbef3b809.json
+原始制度副本复验前后 SHA-256 相同：D90D1617CA319CFC8F13B1D836C078263F7D27C2D99DC9C5B02DEE1D82BFCBBC

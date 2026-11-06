@@ -1,0 +1,70 @@
+{
+  "mode": "offline_mock",
+  "question": "这趟出差住宿费上限是多少？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "这趟出差住宿费上限是多少？"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D02"
+        ]
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "result_summary": {
+        "doc_id": "D02",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+      },
+      "reason": "读取本地原文，核对版本和条款。",
+      "next_action": "ask_user"
+    },
+    {
+      "step": 3,
+      "action": "ask_user",
+      "arguments": {
+        "status": "待确认",
+        "answer": "请问本次国内出差的目的地是哪座城市？",
+        "gaps": [
+          "请问本次国内出差的目的地是哪座城市？"
+        ],
+        "citations": [
+          {
+            "doc_id": "D02",
+            "version": "2026-09-01",
+            "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+          }
+        ]
+      },
+      "result_summary": "待确认",
+      "reason": "根据已读取的条款与尚缺的信息结束本轮。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "待确认",
+  "answer": "请问本次国内出差的目的地是哪座城市？",
+  "gaps": [
+    "请问本次国内出差的目的地是哪座城市？"
+  ],
+  "citations": [
+    {
+      "doc_id": "D02",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差，在北京、上海、广州、深圳住宿，每人每晚上限为 500 元人民币。在其他国内城市住宿，每人每晚上限为 350 元人民币。限额内按实际住宿费用报销。"
+    }
+  ],
+  "session_id": "aedc85eec7124e72a8c4f9c5603284ab",
+  "turn": 1
+}

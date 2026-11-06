@@ -1,0 +1,41 @@
+Environment: base
+Exit code: 0
+test_cancel_menu_then_enter_chinese (test_command_menu.CommandMenu.test_cancel_menu_then_enter_chinese) ... skipped '可选终端依赖未安装'
+test_slash_opens_before_enter_and_arrows_select (test_command_menu.CommandMenu.test_slash_opens_before_enter_and_arrows_select) ... skipped '可选终端依赖未安装'
+test_batch_is_rejected_then_model_reads_one_at_a_time (test_deepseek.DeepSeekAdapter.test_batch_is_rejected_then_model_reads_one_at_a_time) ... ok
+test_empty_result_cannot_be_reported_as_tool_error (test_deepseek.DeepSeekAdapter.test_empty_result_cannot_be_reported_as_tool_error) ... ok
+test_lodging_and_breakfast_allows_partial (test_deepseek.DeepSeekAdapter.test_lodging_and_breakfast_allows_partial) ... ok
+test_missing_key_never_sends (test_deepseek.DeepSeekAdapter.test_missing_key_never_sends) ... ok
+test_one_lodging_question_requires_clarification (test_deepseek.DeepSeekAdapter.test_one_lodging_question_requires_clarification) ... ok
+test_session_uses_previous_question_and_answer (test_deepseek.DeepSeekAdapter.test_session_uses_previous_question_and_answer) ... ok
+test_timeout_ends_turn (test_deepseek.DeepSeekAdapter.test_timeout_ends_turn) ... ok
+test_timeout_then_empty_retry_can_finish_as_tool_failure (test_deepseek.DeepSeekAdapter.test_timeout_then_empty_retry_can_finish_as_tool_failure) ... ok
+test_tool_roundtrip_and_timeout_observation (test_deepseek.DeepSeekAdapter.test_tool_roundtrip_and_timeout_observation) ... ok
+test_citation_checks (test_guardrails.Guardrails.test_citation_checks) ... ok
+test_eighth_tool_then_next_turn (test_guardrails.Guardrails.test_eighth_tool_then_next_turn) ... ok
+test_eighth_valid_answer (test_guardrails.Guardrails.test_eighth_valid_answer) ... ok
+test_first_timeout_and_retry (test_guardrails.Guardrails.test_first_timeout_and_retry) ... ok
+test_missing_parameter (test_guardrails.Guardrails.test_missing_parameter) ... ok
+test_no_room_for_correction (test_guardrails.Guardrails.test_no_room_for_correction) ... ok
+test_prior_turn_is_not_current_evidence (test_guardrails.Guardrails.test_prior_turn_is_not_current_evidence) ... ok
+test_retry_fails (test_guardrails.Guardrails.test_retry_fails) ... ok
+test_timeout_then_stop (test_guardrails.Guardrails.test_timeout_then_stop) ... ok
+test_conflict_rechecks_without_trusting_user_or_newest (test_offline_cli.OfflineCLI.test_conflict_rechecks_without_trusting_user_or_newest) ... ok
+test_context_in_earlier_statement (test_offline_cli.OfflineCLI.test_context_in_earlier_statement) ... ok
+test_deadline_without_key (test_offline_cli.OfflineCLI.test_deadline_without_key) ... ok
+test_interactive_commands_preserve_followup (test_offline_cli.OfflineCLI.test_interactive_commands_preserve_followup) ... ok
+test_interactive_destination_and_restart (test_offline_cli.OfflineCLI.test_interactive_destination_and_restart) ... ok
+test_no_match (test_offline_cli.OfflineCLI.test_no_match) ... ok
+test_paraphrase_and_empty_first_search (test_offline_cli.OfflineCLI.test_paraphrase_and_empty_first_search) ... ok
+test_partly_answered (test_offline_cli.OfflineCLI.test_partly_answered) ... ok
+test_rail_seats (test_offline_cli.OfflineCLI.test_rail_seats) ... ok
+test_replacement_uses_read_text (test_offline_cli.OfflineCLI.test_replacement_uses_read_text) ... ok
+test_verified_local_precedence (test_offline_cli.OfflineCLI.test_verified_local_precedence) ... ok
+test_ctrl_c_at_prompt_exits_without_traceback (test_terminal_interrupt.TerminalInterrupt.test_ctrl_c_at_prompt_exits_without_traceback) ... ok
+test_ctrl_c_during_answer_exits (test_terminal_interrupt.TerminalInterrupt.test_ctrl_c_during_answer_exits) ... ok
+test_waiting_cleans_up_on_interrupt (test_terminal_interrupt.TerminalInterrupt.test_waiting_cleans_up_on_interrupt) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 7.002s
+
+OK (skipped=2)

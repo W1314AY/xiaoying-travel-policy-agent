@@ -1,0 +1,42 @@
+{
+  "test_case": "timeout-twice",
+  "mode": "offline_mock",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内出差返程后多久要提交报销单？"
+      },
+      "result_summary": {
+        "error": "search_timeout",
+        "simulated": true,
+        "message": "制度检索超时。"
+      },
+      "reason": "按员工问题或会话中待补的事项检索制度。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内出差返程后多久要提交报销单？"
+      },
+      "result_summary": {
+        "error": "search_timeout",
+        "simulated": false,
+        "message": "制度检索超时。"
+      },
+      "reason": "检索超时，重试一次以核对制度。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "status": "工具失败",
+  "answer": "重试后制度检索仍超时，无法核对条款。",
+  "citations": [],
+  "gaps": [
+    "重试后制度检索仍超时，无法核对条款。"
+  ]
+}

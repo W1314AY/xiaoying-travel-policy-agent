@@ -1,0 +1,24 @@
+[
+  {
+    "count": 1,
+    "names": [
+      "read_document"
+    ],
+    "finish_reason": "tool_calls",
+    "valid_fields": [
+      true
+    ]
+  },
+  {
+    "count": 2,
+    "names": [
+      "read_document",
+      "read_document"
+    ],
+    "finish_reason": "tool_calls",
+    "valid_fields": [
+      true,
+      true
+    ]
+  }
+]

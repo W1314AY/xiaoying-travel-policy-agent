@@ -1,0 +1,6 @@
+模式：DeepSeek（deepseek-flash）
+问题：早餐费能单独报销吗？
+状态：模型请求失败
+回答：未配置 DEEPSEEK_API_KEY，未发送请求。
+资料缺口：未配置 DEEPSEEK_API_KEY，未发送请求。
+记录路径：<project>\examples\task04\preflight\outside\6b12bbfe645042f98a6a4d690d195e1b-01.json

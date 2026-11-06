@@ -1,0 +1,85 @@
+{
+  "mode": "deepseek",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅报销单提交时限 出差返程后"
+      },
+      "result_summary": {
+        "error": "search_timeout",
+        "simulated": true,
+        "message": "制度检索超时。"
+      },
+      "reason": "需先检索国内差旅报销制度中关于提交时限的条款。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅费报销 时限"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "首次检索超时，按规则改用更短关键词重试一次。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 3,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费管理办法"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "关键词检索无结果，改用制度名称检索候选文档。",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 4,
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "以最宽泛的\"报销\"一词检索，尝试定位相关制度文档。",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {
+        "status": "工具失败",
+        "answer": "未能核对：首次检索报超时错误，按规则重试后改用\"差旅费报销 时限\"\"国内差旅费管理办法\"\"报销\"等关键词检索，均返回空候选列表，无法定位到国内差旅报销制度的原文，因此无法给返程后提交报销单的时限结论。",
+        "gaps": [
+          "未能检索到国内差旅报销制度文档，需确认制度名称或直接提供文档 ID",
+          "返程后提交报销单的具体时限未核实"
+        ],
+        "citations": []
+      },
+      "result_summary": "工具失败",
+      "reason": "检索工具超时且后续检索均无候选文档，无原文可引用，无法核对。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": true,
+  "status": "工具失败",
+  "answer": "未能核对：首次检索报超时错误，按规则重试后改用\"差旅费报销 时限\"\"国内差旅费管理办法\"\"报销\"等关键词检索，均返回空候选列表，无法定位到国内差旅报销制度的原文，因此无法给返程后提交报销单的时限结论。",
+  "gaps": [
+    "未能检索到国内差旅报销制度文档，需确认制度名称或直接提供文档 ID",
+    "返程后提交报销单的具体时限未核实"
+  ],
+  "citations": [],
+  "session_id": "cde854178ea4411b91978c12c38fe5ee",
+  "turn": 1
+}

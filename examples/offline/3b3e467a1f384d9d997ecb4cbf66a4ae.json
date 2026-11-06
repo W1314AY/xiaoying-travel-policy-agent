@@ -1,0 +1,52 @@
+{
+  "mode": "offline_mock",
+  "question": "自行升至一等座怎么报销？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "自行升至一等座怎么报销？"
+      },
+      "result_summary": {
+        "candidate_ids": [
+          "D03"
+        ]
+      },
+      "reason": "查找与提问匹配的制度。",
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      },
+      "result_summary": {
+        "doc_id": "D03",
+        "version": "2026-09-01",
+        "quote": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。"
+      },
+      "reason": "读取命中文档，核对制度原文。",
+      "next_action": "finish"
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "arguments": {},
+      "result_summary": "已回答",
+      "reason": "据已读取的条款回答。",
+      "next_action": "结束"
+    }
+  ],
+  "status": "已回答",
+  "answer": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "version": "2026-09-01",
+      "quote": "普通员工国内出差乘坐高铁或动车，二等座按实际票价报销。自行选择一等座的，最高按同车次、同区间二等座票价报销，差额由本人承担。"
+    }
+  ],
+  "gaps": []
+}

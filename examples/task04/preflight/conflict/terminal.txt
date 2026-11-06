@@ -1,0 +1,6 @@
+模式：DeepSeek（deepseek-flash）
+问题：国内出差返程后多久要提交报销单？
+状态：模型请求失败
+回答：未配置 DEEPSEEK_API_KEY，未发送请求。
+资料缺口：未配置 DEEPSEEK_API_KEY，未发送请求。
+记录路径：<project>\examples\task04\preflight\conflict\5037b29044af460bab83cdfb15f604fc-01.json

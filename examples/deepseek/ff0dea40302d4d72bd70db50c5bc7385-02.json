@@ -1,0 +1,94 @@
+{
+  "mode": "deepseek",
+  "question": "伙食补助费",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "伙食补助费 出差 标准"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "检索国内差旅伙食补助费标准的候选制度文件",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅费管理办法 伙食补助"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用制度名称关键词再次检索伙食补助相关制度",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 3,
+      "action": "search_documents",
+      "arguments": {
+        "query": "出差 餐费 补贴 报销"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用口语化关键词检索出差餐费补贴制度",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 4,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "使用差旅费通用关键词检索相关制度文档",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {
+        "status": "依据不足",
+        "answer": "关于去上海出差的伙食补助费标准，我按\"伙食补助费 出差 标准\"\"差旅费管理办法 伙食补助\"\"出差 餐费 补贴 报销\"\"国内差旅费\"等关键词检索，均返回空列表，未获得任何候选制度文档，因此无法核实普通员工赴上海出差的伙食补助费标准。此前住宿费标准（北京、上海、广州、深圳每人每晚上限 500 元）来自本轮之前会话的读取结果，本轮未重新读取原文，故不在此作为引用。建议补充差旅费管理办法的文档 ID 或制度全称，我可据此重新核对。",
+        "gaps": [
+          "未检索到任何国内差旅伙食补助费相关制度文档，无法确认普通员工赴上海的伙食补助标准（按天定额、是否分地区、是否需凭票等）",
+          "本轮未重新读取住宿费等既有引用原文，未纳入引用"
+        ],
+        "citations": []
+      },
+      "result_summary": "依据不足",
+      "reason": "多次换词检索均无候选文档返回，缺少可核实的制度原文，按依据不足结束。",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {
+    "history": [
+      {
+        "role": "user",
+        "content": "去上海出差的差旅费是多少？"
+      },
+      {
+        "role": "assistant",
+        "content": "已查到普通员工国内差旅住宿标准：在北京、上海、广州、深圳住宿每人每晚上限 500 元，限额内按实际住宿费用报销。但\"差旅费\"还包含伙食补助、市内交通、城际交通等项目，现有资料仅见住宿一项标准，因此需要先确认您的具体条件：请问您要核对的是哪一项费用（住宿费、伙食补助费、市内交通费还是城际交通费）？以及您的出差天数或实际发生的费用金额是多少？"
+      }
+    ]
+  },
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": false,
+  "status": "依据不足",
+  "answer": "关于去上海出差的伙食补助费标准，我按\"伙食补助费 出差 标准\"\"差旅费管理办法 伙食补助\"\"出差 餐费 补贴 报销\"\"国内差旅费\"等关键词检索，均返回空列表，未获得任何候选制度文档，因此无法核实普通员工赴上海出差的伙食补助费标准。此前住宿费标准（北京、上海、广州、深圳每人每晚上限 500 元）来自本轮之前会话的读取结果，本轮未重新读取原文，故不在此作为引用。建议补充差旅费管理办法的文档 ID 或制度全称，我可据此重新核对。",
+  "gaps": [
+    "未检索到任何国内差旅伙食补助费相关制度文档，无法确认普通员工赴上海的伙食补助标准（按天定额、是否分地区、是否需凭票等）",
+    "本轮未重新读取住宿费等既有引用原文，未纳入引用"
+  ],
+  "citations": [],
+  "session_id": "ff0dea40302d4d72bd70db50c5bc7385",
+  "turn": 2
+}

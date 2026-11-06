@@ -1,0 +1,104 @@
+{
+  "mode": "deepseek",
+  "question": "国内出差返程后多久要提交报销单？",
+  "steps": [
+    {
+      "step": 1,
+      "action": "search_documents",
+      "arguments": {
+        "query": "国内差旅费报销单提交时限 出差返程后"
+      },
+      "result_summary": {
+        "error": "search_timeout",
+        "simulated": true,
+        "message": "制度检索超时。"
+      },
+      "reason": "检索国内差旅报销提交时限相关制度",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅报销 提交时间"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "检索超时后改用较短关键词重试一次",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 3,
+      "action": "search_documents",
+      "arguments": {
+        "query": "差旅费"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用制度主题词检索差旅费制度候选",
+      "next_action": "search_documents"
+    },
+    {
+      "step": 4,
+      "action": "search_documents",
+      "arguments": {
+        "query": "费用报销"
+      },
+      "result_summary": {
+        "candidate_ids": []
+      },
+      "reason": "换用报销主题词检索候选制度",
+      "next_action": "finish"
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "arguments": {
+        "status": "工具失败",
+        "answer": "本轮未能核对国内出差报销单的提交时限：首次检索工具报超时，随后按要求重试一次，之后以“差旅报销 提交时间”“差旅费”“费用报销”等关键词检索均返回空候选，未能取得任何可读取的制度文档，因此无法给出具体时限结论。",
+        "gaps": [
+          "国内差旅费报销单提交时限的制度原文（未能检索到候选文档）",
+          "如报销时限因费用类型或金额不同而不同，需对应的具体规定"
+        ],
+        "citations": []
+      },
+      "result_summary": {
+        "error": "invalid_answer",
+        "message": "本轮当前没有未恢复的检索错误。若所有事项均缺少制度依据，请选择依据不足。"
+      },
+      "reason": "检索工具先超时、重试后多次检索均无候选，无可读原文可引用",
+      "next_action": "finish"
+    },
+    {
+      "step": 6,
+      "action": "finish",
+      "arguments": {
+        "status": "依据不足",
+        "answer": "本轮未能核对国内出差返程后报销单的提交时限。首次检索工具报超时，按要求重试后以“差旅报销 提交时间”“差旅费”“费用报销”等关键词检索均返回空候选，未取得任何可读取的制度文档，因此无法给出具体时限结论。建议补充制度文档名称或文档 ID，或由制度管理部门确认后告知。",
+        "gaps": [
+          "国内差旅费报销单提交时限的制度原文（未检索到任何候选文档）",
+          "如时限按费用类型或金额区分，需对应的具体规定"
+        ],
+        "citations": []
+      },
+      "result_summary": "依据不足",
+      "reason": "检索重试后仍无候选文档，全部事项缺少制度依据",
+      "next_action": "结束"
+    }
+  ],
+  "context_before": {},
+  "model": "deepseek-flash",
+  "request_timeout_seconds": 60,
+  "first_search_timeout": true,
+  "status": "依据不足",
+  "answer": "本轮未能核对国内出差返程后报销单的提交时限。首次检索工具报超时，按要求重试后以“差旅报销 提交时间”“差旅费”“费用报销”等关键词检索均返回空候选，未取得任何可读取的制度文档，因此无法给出具体时限结论。建议补充制度文档名称或文档 ID，或由制度管理部门确认后告知。",
+  "gaps": [
+    "国内差旅费报销单提交时限的制度原文（未检索到任何候选文档）",
+    "如时限按费用类型或金额区分，需对应的具体规定"
+  ],
+  "citations": [],
+  "session_id": "53eede1d9fa34ec1a2124aa6423c2467",
+  "turn": 1
+}

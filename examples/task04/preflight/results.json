@@ -1,0 +1,164 @@
+[
+  {
+    "case": "normal",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\normal",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key"
+    ],
+    "traces": [
+      "normal/53ad5e64c0074a17bb265b98e7d9369f-01.json"
+    ],
+    "terminal": "normal/terminal.txt"
+  },
+  {
+    "case": "timeout",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--first-search-timeout",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\timeout",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key"
+    ],
+    "traces": [
+      "timeout/844c0c6fabbf4b27a723cb595630ed08-01.json"
+    ],
+    "terminal": "timeout/terminal.txt"
+  },
+  {
+    "case": "conflict",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--extra-data",
+      "data/conflict.json",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\conflict",
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "questions": [
+      "国内出差返程后多久要提交报销单？"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key"
+    ],
+    "traces": [
+      "conflict/5037b29044af460bab83cdfb15f604fc-01.json"
+    ],
+    "terminal": "conflict/terminal.txt"
+  },
+  {
+    "case": "outside",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\outside",
+      "早餐费能单独报销吗？"
+    ],
+    "questions": [
+      "早餐费能单独报销吗？"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key"
+    ],
+    "traces": [
+      "outside/6b12bbfe645042f98a6a4d690d195e1b-01.json"
+    ],
+    "terminal": "outside/terminal.txt"
+  },
+  {
+    "case": "similar",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\similar",
+      "出差回来最晚什么时候交单？"
+    ],
+    "questions": [
+      "出差回来最晚什么时候交单？"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key"
+    ],
+    "traces": [
+      "similar/4d24cdffd1a14920a5ebea0b5099144c-01.json"
+    ],
+    "terminal": "similar/terminal.txt"
+  },
+  {
+    "case": "context",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "develope/src/travel_qa.py",
+      "--mode",
+      "deepseek",
+      "--trace-dir",
+      "<project>\\examples\\task04\\preflight\\context",
+      "这趟出差住宿费上限是多少？",
+      "上海"
+    ],
+    "questions": [
+      "这趟出差住宿费上限是多少？",
+      "上海"
+    ],
+    "result": "blocked",
+    "issues": [
+      "missing_key",
+      "对话尚未跑完"
+    ],
+    "traces": [
+      "context/d4a4afdc884548fcaef28b07052ba7f3-01.json"
+    ],
+    "terminal": "context/terminal.txt"
+  }
+]
